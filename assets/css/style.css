@@ -1,0 +1,145 @@
+/* COMMON CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+body{
+  height: 2120vh;
+  background: #000;
+}
+.flex {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #000;
+}
+
+/* HUMBERB CREATE */
+.toggle {
+  display: none;
+}
+
+.toggle_line {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+}
+
+.toggle_line:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+/* BOTH LINES  */
+.logo:after,
+.cart_icon:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  background-color: #e2e2e2;
+  width: 1px;
+  height: 60px;
+}
+
+.logo:after {
+  left: 300px;
+}
+
+.cart_icon:after {
+  right: 79px;
+}
+
+/* HEADER CSS */
+.header {
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  padding: 21.5px 25px;
+}
+
+/* NAVIGATION BAR CSS */
+.nav_bar {
+  align-items: center;
+  gap: 60px;
+  line-height: 0;
+}
+
+.nav_list:not(:last-child) {
+  padding-right: 38px;
+}
+
+.nav_link {
+  padding: 2px;
+  border-bottom: 2px solid #fbb232;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav_link:hover {
+  border-width: 4px;
+}
+
+/* RESPONSIVE SCREEN 1130PX */
+@media (max-width: 1130px) {
+  .logo:after,
+  .cart_icon:after {
+    display: none;
+  }
+  .nav_bar {
+    line-height: 1;
+  }
+  .toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav_items {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav_items {
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    left: 0;
+    top: 77px;
+    flex-direction: column;
+    padding: 15px 25px;
+    transform: translateX(-100%);
+    transition: all 0.4s cubic-bezier(0.71, 0, 0.33, 1.46);
+    overflow-y: scroll;
+  }
+
+  .nav_link {
+    border: none;
+  }
+
+  .nav_list {
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fbb232;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .nav_items.active {
+    transform: translateX(0%);
+  }
+}
